@@ -22,8 +22,8 @@ android {
     useLibrary 'org.apache.http.legacy'
 }
 repositories {
-    maven { url "https://jitpack.io" }
     google()
+    maven { url "https://jitpack.io" }
 }
 
 dependencies {
