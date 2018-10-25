@@ -7,7 +7,7 @@ public class ConstValue {
     //public static String BASE_URL = "http://education.servershine.net/";
     //public  static String BASE_URL = "http://iclauncher.com/education/";
     //public static String BASE_URL = "http://iclauncher.com/malek/";
-    public static String BASE_URL = "http://shreehariweb.com/education";
+    public static String BASE_URL = "https://lotusvalley.000webhostapp.com/codecanyon-education";
     // public  static String BASE_URL = "http://192.168.0.102:89/education/";
     public static String LOGIN_URL = BASE_URL + "/index.php/api/login";
     public static String STUDENT_PROFILE_URL = BASE_URL + "/index.php/api/get_student_profile";
