@@ -15,6 +15,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -24,6 +25,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.GridLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -39,28 +41,21 @@ import adapter.ManuAdapter;
 import fcm.MyFirebaseRegister;
 import util.CommonClass;
 
-public class MainActivity extends AppCompatActivity implements GridView.OnItemClickListener {
-
-    AsyncTask<Void, Void, Void> mRegisterTask;
-
-    private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
-    private static final String TAG = "MainActivity";
-
-    private BroadcastReceiver mRegistrationBroadcastReceiver;
+public class MainActivity extends AppCompatActivity {
 
 
     ImageView logout;
-    List<String> menu_name;
-    List<Integer> menu_icon;
+    //List<Integer> menu_name;
+    List<Class> menu_icon;
     CommonClass common;
+    GridLayout mainGrid;
+    private BroadcastReceiver mRegistrationBroadcastReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//getSupportActionBar().hide();
+        setContentView(R.layout.test);
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -72,13 +67,18 @@ public class MainActivity extends AppCompatActivity implements GridView.OnItemCl
             startActivity(startmainIntent);
         }
 
+        mainGrid = (GridLayout) findViewById(R.id.mainGrid);
+
+        //Set Event
+        setSingleEvent(mainGrid);
+
         common = new CommonClass(this);
 
         logout = (ImageView) findViewById(R.id.imglogout);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              /*  SharedPreferences myPrefs = getSharedPreferences("MY_PREF",
+                SharedPreferences myPrefs = getSharedPreferences("MY_PREF",
                         MODE_PRIVATE);
                 SharedPreferences.Editor editor = myPrefs.edit();
                 editor.clear();
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements GridView.OnItemCl
                 Toast.makeText(getApplicationContext(),getString(R.string.main_activity_logout), Toast.LENGTH_SHORT).show();
                 Intent intent1 = new Intent(MainActivity.this, LoginActivity.class);
                 intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent1); */
+                startActivity(intent1);
 
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
 
@@ -128,8 +128,7 @@ public class MainActivity extends AppCompatActivity implements GridView.OnItemCl
             }
         });
 
-
-        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        /*final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -148,75 +147,32 @@ public class MainActivity extends AppCompatActivity implements GridView.OnItemCl
                 Intent intent = new Intent(MainActivity.this, TopStudentActivity.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
-        menu_icon = new ArrayList<Integer>();
-        menu_name = new ArrayList<String>();
+        menu_icon = new ArrayList<Class>();
+        //menu_name = new ArrayList<String>();
 
-        menu_icon.add(R.drawable.ic_menu_01);
-        menu_icon.add(R.drawable.ic_menu_02);
-        menu_icon.add(R.drawable.ic_menu_03);
-        menu_icon.add(R.drawable.ic_menu_04);
-        menu_icon.add(R.drawable.ic_menu_05);
-        menu_icon.add(R.drawable.ic_menu_06);
-        menu_icon.add(R.drawable.ic_menu_07);
-        menu_icon.add(R.drawable.ic_menu_08);
-        menu_icon.add(R.drawable.ic_menu_09);
-        menu_icon.add(R.drawable.ic_menu_10);
-        menu_icon.add(R.drawable.ic_menu_11);
-        menu_icon.add(R.drawable.ic_menu_12);
-        menu_icon.add(R.drawable.ic_menu_13);
-        menu_icon.add(R.drawable.ic_menu_14);
-        menu_icon.add(R.drawable.ic_menu_15);
+        menu_icon.add(ProfileActivity.class);
+        menu_icon.add(AttendenceActivity.class);
+        menu_icon.add(ExamActivity.class);
+        menu_icon.add(ResultActivity.class);
+        menu_icon.add(TeacherActivity.class);
+        menu_icon.add(GrowthActivity.class);
+        menu_icon.add(HolidaysActivity.class);
+        menu_icon.add(NewsActivity.class);
+        menu_icon.add(NoticeActivity.class);
+        menu_icon.add(SchoolProfileActivity.class);
+        menu_icon.add(TimetableActivity.class);
+        menu_icon.add(FeesActivity.class);
+        //menu_icon.add(BookActivity.class);
+        //menu_icon.add(Quiz_subjectActivity.class);
+        //menu_icon.add(NoticeActivity.class);
 
-        menu_name.add(getString(R.string.menu_profile));
-        menu_name.add(getString(R.string.menu_attendence));
-        menu_name.add(getString(R.string.menu_exam));
-        menu_name.add(getString(R.string.menu_result));
-        menu_name.add(getString(R.string.menu_teacher));
-        menu_name.add(getString(R.string.menu_growth));
-        menu_name.add(getString(R.string.menu_holiday));
-        menu_name.add(getString(R.string.menu_news));
-        menu_name.add(getString(R.string.menu_notice));
-        menu_name.add(getString(R.string.menu_school));
-        menu_name.add(getString(R.string.menu_time_table));
-        menu_name.add(getString(R.string.menu_quiz));
-        menu_name.add(getString(R.string.menu_fees));
-        menu_name.add(getString(R.string.menu_book));
-        menu_name.add(getString(R.string.menu_notification));
-
-        GridView gridview = (GridView) findViewById(R.id.gridView);
-        ManuAdapter adapter = new ManuAdapter(getApplicationContext(), menu_name, menu_icon);
-        gridview.setAdapter(adapter);
-        gridview.setOnItemClickListener(this);
-
-        gridview.setOnScrollListener(new AbsListView.OnScrollListener() {
-            @Override
-            public void onScrollStateChanged(AbsListView view, int scrollState) {
-                /*if(scrollState == SCROLL_STATE_TOUCH_SCROLL){
-                    fab.setVisibility(View.INVISIBLE);
-                    fab2.setVisibility(View.INVISIBLE);
-                }else{
-                    fab.setVisibility(View.VISIBLE);
-                    fab2.setVisibility(View.VISIBLE);
-                }*/
-            }
-
-            @Override
-            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-                /*int lastItem = firstVisibleItem + visibleItemCount;
-                if (lastItem == totalItemCount) {
-                    fab.setVisibility(View.INVISIBLE);
-                }else {
-                    fab.setVisibility(View.VISIBLE);
-                }*/
-            }
-        });
-
-        MyFirebaseRegister myFirebaseRegister = new MyFirebaseRegister(this);
-        myFirebaseRegister.RegisterUser();
 
     }
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -240,9 +196,46 @@ public class MainActivity extends AppCompatActivity implements GridView.OnItemCl
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        common.open_screen(position);
+    private void setToggleEvent(GridLayout mainGrid) {
+        //Loop all child item of Main Grid
+        for (int i = 0; i < mainGrid.getChildCount(); i++) {
+            //You can see , all child item is CardView , so we just cast object to CardView
+            final CardView cardView = (CardView) mainGrid.getChildAt(i);
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (cardView.getCardBackgroundColor().getDefaultColor() == -1) {
+                        //Change background color
+                        cardView.setCardBackgroundColor(Color.parseColor("#FF6F00"));
+                        Toast.makeText(MainActivity.this, "State : True", Toast.LENGTH_SHORT).show();
+
+                    } else {
+                        //Change background color
+                        cardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
+                        Toast.makeText(MainActivity.this, "State : False", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
+    }
+
+    private void setSingleEvent(GridLayout mainGrid) {
+        //Loop all child item of Main Grid
+        for (int i = 0; i < mainGrid.getChildCount(); i++) {
+            //You can see , all child item is CardView , so we just cast object to CardView
+            CardView cardView = (CardView) mainGrid.getChildAt(i);
+            final int finalI = i;
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    Intent intent = new Intent(MainActivity.this,menu_icon.get(finalI));
+                    intent.putExtra("info","This is activity from card item index  "+finalI);
+                    startActivity(intent);
+
+                }
+            });
+        }
     }
 
     @Override
