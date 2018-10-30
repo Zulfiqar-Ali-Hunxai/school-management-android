@@ -20,6 +20,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.os.NetworkOnMainThreadException;
 import android.util.Log;
 
 public class JSONParser {
@@ -70,7 +71,9 @@ public class JSONParser {
 	        e.printStackTrace();
 	    } catch (ClientProtocolException e) {
 	        e.printStackTrace();
-	    } catch (Exception ex) {
+	    } catch (NetworkOnMainThreadException e) {
+			e.printStackTrace();
+		} catch (Exception ex) {
 	        //Log.d("Networking", ex.getLocalizedMessage());
 	        throw new IOException("Error connecting");
 	    }

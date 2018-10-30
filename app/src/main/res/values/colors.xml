@@ -24,5 +24,8 @@
     <color name="color_91">#3981CB</color>
     <color name="white1">#ffffff</color>
     <color name="black">#000000</color>
+    <color name="calendar_bg">#ffffff</color>
+    <color name="calendar_text_color">#000000</color>
+    <color name="dialog_black">#414040</color>
 
 </resources>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
 
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.education.NoticeActivity"
+    tools:context="com.school.NoticeActivity"
     tools:showIn="@layout/activity_notice">
 <ListView
     android:layout_width="match_parent"

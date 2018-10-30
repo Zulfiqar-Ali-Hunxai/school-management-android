@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.education.TeacherActivity"
+    tools:context="com.school.TeacherActivity"
     tools:showIn="@layout/activity_teacher">
 <ListView
     android:layout_width="match_parent"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.education.AttendenceActivity"
+    tools:context="com.school.MonthCalendarActivity"
     android:background="#e0e0e0">
 
     <android.support.design.widget.AppBarLayout
@@ -22,7 +22,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_attendence" />
+    <include layout="@layout/calendar_layout" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

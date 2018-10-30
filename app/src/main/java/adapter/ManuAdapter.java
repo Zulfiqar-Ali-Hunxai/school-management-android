@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.education.R;
+import com.school.R;
 
 import java.util.ArrayList;
 import java.util.List;
