@@ -111,8 +111,8 @@ public class SchoolProfileActivity extends CommonAppCompatActivity implements Vi
             //Bitmap bitmap = ImageLoader.getInstance().loadImageSync(ConstValue.BASE_URL+"/uploads/studentphoto/"+ objStudData.getString("student_photo"));
             //BitmapDrawable background = new BitmapDrawable(bitmap);
             //collapsToolbar.setBackgroundDrawable(background);
-            RoundedImageView top_image = (RoundedImageView) findViewById(R.id.top_image);
-            ImageLoader.getInstance().displayImage(ConstValue.BASE_URL + "/uploads/profile/" + objStudData.getString("school_logo"), top_image, options, animateFirstListener);
+            //RoundedImageView top_image = (RoundedImageView) findViewById(R.id.top_image);
+            //ImageLoader.getInstance().displayImage(ConstValue.BASE_URL + "/uploads/profile/" + objStudData.getString("school_logo"), top_image, options, animateFirstListener);
 
 
             //getSupportActionBar().setTitle(objStudData.getString("student_name"));
