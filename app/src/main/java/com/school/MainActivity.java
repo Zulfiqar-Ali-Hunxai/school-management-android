@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences myPrefs = getSharedPreferences("MY_PREF",
+                /*SharedPreferences myPrefs = getSharedPreferences("MY_PREF",
                         MODE_PRIVATE);
                 SharedPreferences.Editor editor = myPrefs.edit();
                 editor.clear();
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),getString(R.string.main_activity_logout), Toast.LENGTH_SHORT).show();
                 Intent intent1 = new Intent(MainActivity.this, LoginActivity.class);
                 intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent1);
+                startActivity(intent1);*/
 
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
 
