@@ -4,21 +4,21 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-import com.school.AttendenceActivity;
-import com.school.BookActivity;
-import com.school.ExamActivity;
-import com.school.FeesActivity;
-import com.school.GrowthActivity;
-import com.school.HolidaysActivity;
-import com.school.NewsActivity;
-import com.school.NoticeActivity;
-import com.school.NotificationActivity;
-import com.school.ProfileActivity;
-import com.school.Quiz_subjectActivity;
-import com.school.ResultActivity;
-import com.school.SchoolProfileActivity;
-import com.school.TeacherActivity;
-import com.school.TimetableActivity;
+import com.e_school.AttendenceActivity;
+import com.e_school.BookActivity;
+import com.e_school.ExamActivity;
+import com.e_school.FeesActivity;
+import com.e_school.GrowthActivity;
+import com.e_school.HolidaysActivity;
+import com.e_school.NewsActivity;
+import com.e_school.NoticeActivity;
+import com.e_school.NotificationActivity;
+import com.e_school.ProfileActivity;
+import com.e_school.Quiz_subjectActivity;
+import com.e_school.ResultActivity;
+import com.e_school.SchoolProfileActivity;
+import com.e_school.TeacherActivity;
+import com.e_school.TimetableActivity;
 
 import Config.ConstValue;
 

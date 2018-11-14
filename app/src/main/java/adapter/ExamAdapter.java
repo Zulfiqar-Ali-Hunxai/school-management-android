@@ -25,7 +25,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.school.R;
+import com.e_school.R;
 
 import util.CommonClass;
 import util.JSONParser;

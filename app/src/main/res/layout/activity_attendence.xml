@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.school.MonthCalendarActivity"
+    tools:context="com.e_school.MonthCalendarActivity"
     android:background="#e0e0e0">
 
     <android.support.design.widget.AppBarLayout

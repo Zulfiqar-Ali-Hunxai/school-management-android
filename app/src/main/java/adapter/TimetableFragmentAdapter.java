@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.school.TimetableListFragment;
+import com.e_school.TimetableListFragment;
 
 /**
  * Created by Rajesh on 2017-09-05.

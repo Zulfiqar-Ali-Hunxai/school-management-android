@@ -15,8 +15,8 @@ import android.text.Html;
 import android.util.Log;
 import android.util.Patterns;
 
-import com.school.MainActivity;
-import com.school.R;
+import com.e_school.MainActivity;
+import com.e_school.R;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 

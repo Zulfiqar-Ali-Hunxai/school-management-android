@@ -63,31 +63,31 @@
         android:layout_height="350dp"
         android:layout_below="@id/line">
 
-        <com.school.calendarUtil.ScrollLayout
+        <com.e_school.calendarUtil.ScrollLayout
             android:id="@+id/scrollLayout"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:visibility="visible">
 
-            <com.school.CalendarView
+            <com.e_school.CalendarView
                 android:id="@+id/calendar_left"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_alignParentLeft="true" />
 
-            <com.school.CalendarView
+            <com.e_school.CalendarView
                 android:id="@+id/calendar"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_alignParentLeft="true" />
 
-            <com.school.CalendarView
+            <com.e_school.CalendarView
                 android:id="@+id/calendar_right"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_alignParentLeft="true" />
 
-        </com.school.calendarUtil.ScrollLayout>
+        </com.e_school.calendarUtil.ScrollLayout>
     </RelativeLayout>
 
     <RelativeLayout

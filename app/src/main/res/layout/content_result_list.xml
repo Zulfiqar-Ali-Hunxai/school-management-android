@@ -7,7 +7,7 @@
 
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.school.ResultListActivity"
+    tools:context="com.e_school.ResultListActivity"
     tools:showIn="@layout/activity_result_list">
 
     <LinearLayout
